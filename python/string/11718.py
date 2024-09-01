@@ -5,4 +5,3 @@ while True:
     # if there is no input -> EOF (End Of File) -> EOFError -> go to expect scope -> break
     except EOFError:
         break
-    
