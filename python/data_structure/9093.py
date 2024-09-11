@@ -4,8 +4,8 @@ import sys
 t = int(input())
 
 for _ in range(t):
-    word_input = sys.stdin.readline().rstrip()
-    words = list(word_input.split())
+    sentence = sys.stdin.readline().rstrip()
+    words = list(sentence.split())
     reverse_words = []
 
     for word in words:
