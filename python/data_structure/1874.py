@@ -1,5 +1,5 @@
 count = 1
-temp = 0
+temp = True
 stack = []
 op = []
 
@@ -11,3 +11,17 @@ for i in range(n):
         stack.append(count)
         op.append('+')
         count += 1
+
+    # num == stack[-1], remove stack[-1] element
+    if stack[-1] == num:
+        stack.pop()
+        op.append('-')
+    else:
+        temp = False
+        break
+
+if not temp:
+    print("NO")
+else:
+    for i in op:
+        print(i)
