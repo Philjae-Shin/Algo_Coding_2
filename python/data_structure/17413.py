@@ -6,26 +6,24 @@ check = False # Check <>
 for d in data:
     if d == '<':
         check = True
-        for _ in range(len(stack)):
-            ans += stack.pop()
+        while stack:
+            ans += stack.pop() # Flip stack and append to ans
+        ans += d # Add '<'
 
-    stack.append(d)
-    if d == '>':
+    elif d == '>':
         check = False
-        for _ in range(len(stack)):
-            ans += stack.pop()
+        ans += d # Add '>'
 
-    if d == ' ' and check == False:
-        for i in range(len(stack)):
-            if i == 0:
-                stack.pop()
-                continue
+    elif d == ' ' and check == False:
+        while stack:
             ans += stack.pop()
         ans += ' '
 
-if stack:
-    for _ in range(len(stack)):
-        ans += stack.pop()
+    else:
+        stack.append(d)
+
+# Handel remaining stack
+while stack:
+    ans += stack.pop()
 
 print(ans)
-
