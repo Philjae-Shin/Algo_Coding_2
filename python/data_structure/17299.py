@@ -13,6 +13,3 @@ for i in range(n):
     stack.append(i)
 
 print(" ".join(map(str, res)))
-
-
-print()
